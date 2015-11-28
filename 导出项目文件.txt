@@ -1,0 +1,2 @@
+git archive -o <output.tar> <tag> <path>
+git archive -o <output.tar> --remote=<url> <tag> <path>

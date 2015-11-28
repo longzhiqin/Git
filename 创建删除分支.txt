@@ -1,0 +1,4 @@
+git branch <branchname> <commit>  创建分支
+git checkout -b <branch> <commit> 创建并切换到创建的分支
+
+git branch -d <branchname>        删除分支

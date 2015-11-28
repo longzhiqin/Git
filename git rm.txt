@@ -1,0 +1,2 @@
+git rm <file> 		   同时删除本地和暂存区的文件
+git rm --cached <file> 只删除暂存区的文件

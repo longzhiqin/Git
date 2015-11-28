@@ -1,0 +1,11 @@
+git clone git://git.kernel.org/pub/scm/git/git.git  克隆git项目的版本库
+cd git 进入git目录
+git fetch 如果本地已经克隆过一个git的项目版本库,则获取最新的
+git clean -fdx   执行清理工作,避免前一次编译的遗留文件对编译造成影响
+git reset --hard 丢弃本地对git代码的改动
+git tag 查看git里程碑,选择最新的版本进行安装
+git checkout v1  检出最新里程碑的代码
+执行安装
+make prefix=/usr/local all doc info
+sudo make prefix=/usr/local install \
+install-doc install-html install-info

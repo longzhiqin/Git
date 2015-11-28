@@ -1,0 +1,20 @@
+去官网www.cygwin.com下载setup.exe
+搜索git安装所有
+还需要安装的有:
+1.git-completion:git命令的自动补齐
+2.openssh:SSH客户端
+3.vim:git默认的编辑器
+
+运行cygwin后会进入shell环境并见到linux提示符
+可通过执行cygcheck来检测cygwin中安装的软件包的版本:如
+cygcheck -c cygwin 检测cygwin的版本
+
+如何在cygwin中访问Windows盘符:
+执行mount可以看到Windows下的盘符被映射到/cygdrive特殊目录下
+
+可以通过cygpath命令实现Windows和cygwin之间的目录变换:
+cygpath -u c:\\Windows
+/cygdrive/c/Windows
+
+cygpath -w ~/
+c:\cygwin\home\libawei

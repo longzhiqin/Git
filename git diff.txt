@@ -1,0 +1,4 @@
+git diff 		  工作区与暂存区的文件差异比较
+git diff --cached 暂存区与版本库的文件差异比较
+git diff HEAD     工作区与版本库的文件差异比较
+git diff <commit1> <commit2> --<path> 历史版本之间的比较

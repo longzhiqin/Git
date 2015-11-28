@@ -1,0 +1,7 @@
+git checkout 
+git checkout <commit-Id>     更新到历史提交
+git checkout HEAD@'{<date>}' 更新到指定日期
+git checkout master          更新至最新提交
+git checkout <tag>           切换至里程碑
+git checkout <branch>        切换至分支
+git checkout --<path>        还原文件/强制覆盖

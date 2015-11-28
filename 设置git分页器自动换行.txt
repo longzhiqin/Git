@@ -1,0 +1,2 @@
+方法一:export LESS=FRX
+方法二:git config --global core.pager 'less -+$LESS -FRX'

@@ -1,0 +1,3 @@
+git tag  查看里程碑
+git tag [-m "<msg>"] <tagname> [<commit>] 创建里程碑
+git tag -d <tagname>  删除里程碑
