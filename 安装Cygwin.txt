@@ -18,3 +18,19 @@ cygpath -u c:\\Windows
 
 cygpath -w ~/
 c:\cygwin\home\libawei
+
+避免在同一个cygwin环境下有两个不同的用户主目录:
+	1.修改cygwin启动的批处理文件(c:\cygwin\Cygwin.bat),
+	在批处理的开头添加如下一行代码,就可以防止其他软件在Windows
+	引入的HOME环境变量带入到Cygwin中
+	set HOME=
+	2.如果希望使用HOME环境变量指向的主目录,则可以通过手工编辑
+	/etc/passwd文件,将其中的用户主目录修改成HOME环境变量所指向的目录
+设置命令补齐忽略文件名大小写:
+	编辑文件~/.inputrc,在其中添加设置set completion-ignore-case on
+
+禁止Git对文件权限的跟踪(即忽略文件权限的可执行位)
+git config --system core.fileMode false
+
+Cygwin 下的git中文支持:
+执行locale命令可查看Cygwin下正在使用的字符集
