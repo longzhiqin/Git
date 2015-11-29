@@ -1,2 +1,4 @@
 git ls-files
 git ls-tree <commit>
+
+ls -aF 显示文件(包括隐藏文件)

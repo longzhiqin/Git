@@ -1,0 +1,15 @@
+git config --global user.name free.li
+git config --global user.email free.li@shareworks.cn
+
+如果有管理员权限(通过sudo命令获取管理员权限),希望注册的命令能够被所有用户使用:
+sudo git config --system alias.st status
+sudo git config --system alias.ci commit
+sudo git config --system alias.co checkout
+sudo git config --system alias.br branch
+也可运行一下命令,只在本用户的全局配置中添加git命令别名:
+git config --global alias.st status
+git config --global alias.ci commit
+git config --global alias.co checkout
+git config --global alias.br branch
+在git命令输出中开启颜色显示
+git config --global color.ui true
