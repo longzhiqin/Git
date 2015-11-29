@@ -1,0 +1,2 @@
+git status 查看文件的状态
+git status -s 以精简格式查看

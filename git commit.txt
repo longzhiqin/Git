@@ -1,0 +1,4 @@
+git commit 提交,打开编辑器输入提交信息,可输入多行提交信息
+git commit -m "msg"  提交,输入一行提交信息
+git commit --allow-empty -m "msg" 允许空白提交(git默认不允许空白提交)
+git commit -s 在提交说明中自动加上包含提交者姓名和邮件地址的签名标识

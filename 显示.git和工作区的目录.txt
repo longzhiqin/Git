@@ -1,0 +1,5 @@
+git rev-parse --git-dir  显示.git目录所在的位置
+git rev-parse --show-toplevel  显示工作区的位置
+
+git rev-parse --show-prefix  当前目录相对于工作区根目录的相对目录
+git rev-parse --show-cdup    显示从当前目录后退到工作区的根的深度

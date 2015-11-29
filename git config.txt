@@ -1,5 +1,8 @@
 git config --global user.name free.li
 git config --global user.email free.li@shareworks.cn
+删除git全局配置文件中关于user.name和user.email的设置
+git config --unset --global user.name
+git config --unset --global user.email
 
 如果有管理员权限(通过sudo命令获取管理员权限),希望注册的命令能够被所有用户使用:
 sudo git config --system alias.st status
@@ -13,3 +16,14 @@ git config --global alias.co checkout
 git config --global alias.br branch
 在git命令输出中开启颜色显示
 git config --global color.ui true
+
+git config -e 将打开.git目录下的config文件进行编辑(版本库配置文件)
+git config -e --global 打开全局配置文件进行编辑(用户主目录下)
+git config -e --system 打开系统配置文件进行编辑
+
+向配置文件test.ini中添加配置
+GIT_CONFIG=test.ini git config a.b.c.d "hello,world"
+
+从配置文件test.ini中读取配置
+GIT_CONFIG=test.ini git config a.b.c.d
+hello,world
