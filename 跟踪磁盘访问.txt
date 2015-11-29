@@ -1,0 +1,1 @@
+strace -e 'trace=file' git status 如果在非工作去执行命令,则此命令会看到沿目录依次向上递归的过程

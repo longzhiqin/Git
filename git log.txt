@@ -1,0 +1,4 @@
+git log 查看提交日志
+git log --pretty=fuller  显示完整的commitID
+git log --stat  stat参数可以看到每次提交的文件变更统计
+git log --pretty=oneline  将提交信息显示为一行
