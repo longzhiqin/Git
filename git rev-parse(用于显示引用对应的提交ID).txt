@@ -1,0 +1,3 @@
+git rev-parse master 			获取master分支对应的提交ID
+git rev-parse HEAD:welcome.txt  获取welcome.txt文件的SHA1
+git rev-parse HEAD^{tree}       获取树的SHA1

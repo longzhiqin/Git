@@ -1,9 +1,60 @@
 git cat-file -t <ID> 查看ID的类型(commit,tree,blob,tag)[-t(type)]
 
 git cat-file -p <ID> :(显示对象的内容)
-如果ID是commit类型,则显示:ID的父提交,对应的TreeId,author,committer
-如果ID是tree类型,则显示对应的文件
-如果ID是blob类型,则显示文件内容
+	如果ID是commit类型,则显示:ID的父提交,对应的TreeId,author,committer
+	如果ID是tree类型,则显示对应的文件
+	如果ID是blob类型,则显示文件内容
+
+git cat-file commit HEAD 查看HEAD对应的提交内容
+git cat-file commit HEAD | wc -c 查看提交信息中包含的字符数
 
 下面的命令用来查看对象在对象库中的位置:
-for id in ID1 ID2 ID3 ID4;do \ls .git/objects/${id:0:2}/${id:2}*;done
+	for id in ID1 ID2 ID3 ID4;do \ls .git/objects/${id:0:2}/${id:2}*;done
+
+查看版本库中提交的内容:
+	git cat-file commit HEAD
+	tree 4545876464987646789464654649879
+	parent 8432486315632165423195649856231
+	author ........
+	committer ........
+	git cat-file commit HEAD | wc -c 获取字符数
+	234
+	(printf "commit 234\000"; git cat-file commit HEAD) | sha1sum 生成提交SHA1
+	6512354215641325641336546132113
+查看版本库中文件的内容:
+	git cat-file blob HEAD:welcome.txt
+	Helle.
+	Nice to meet you.
+	git cat-file blob HEAD:welcome.txt | wc -c 获取字符数
+	25
+	(printf "blob 25\000"; git cat-file blob HEAD:welcome.txt) | sha1sum 生成文件SHA1
+	65645644654654897321985641356
+查看版本库中树的内容:
+	git cat-file tree HEAD^{tree}
+	显示乱码
+	git cat-file tree HEAD^{tree} | wc -c 获取字符数
+	39
+	(printf "tree 39\000"; git cat-file tree HEAD^{tree}) | sha1sum 生成树SHA1
+	65645644654654897321985641356
+符号^用于表示父提交:
+	HEAD^:代表版本库中的上一次提交,即最近一次提交的父提交
+	HEAD^^:代表HEAD^的父提交
+	对于一个提交有多个父提交,可以在符号^后面用数字表示是第几个父提交:
+		a554577^2:提交a554577的多个父提交中的第二个父提交
+		HEAD^1:相当于HAED^
+		HEAD^^2:HEAD^的多个父提交中的第二个父提交
+
+符号~<n>也可以用来指代祖先提交:
+	a554577~5:相当于a554577^^^^^
+
+提交所对应的树对象,可以用如下语法表示:
+	a554577^{tree}
+
+某一次提交所对应的文件对象,可以用如下语法表示:
+	a554577:path/to/file
+
+暂存区的文件对象,可以用如下语法表示:
+	:path/to/file
+
+
+

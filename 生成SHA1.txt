@@ -1,0 +1,1 @@
+printf Git | sha1sum 生成Git字符串的SHA1
