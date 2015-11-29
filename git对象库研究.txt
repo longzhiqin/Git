@@ -1,0 +1,9 @@
+git cat-file -t <ID> 查看ID的类型(commit,tree,blob,tag)[-t(type)]
+
+git cat-file -p <ID> :(显示对象的内容)
+如果ID是commit类型,则显示:ID的父提交,对应的TreeId,author,committer
+如果ID是tree类型,则显示对应的文件
+如果ID是blob类型,则显示文件内容
+
+下面的命令用来查看对象在对象库中的位置:
+for id in ID1 ID2 ID3 ID4;do \ls .git/objects/${id:0:2}/${id:2}*;done
