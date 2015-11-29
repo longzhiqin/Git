@@ -1,4 +1,16 @@
-git ls-files
+git ls-files -s  显示暂存区的目录树,-s表示详细版输出
 git ls-tree <commit>
+git ls-tree -l HEAD HE当前提交指向的目录树,-l可以显示文件的大小
+
+git ls-files -s与git ls-tree -l <commitId>的区别:
+ls-files提交ID后的数字是暂存区编号
+ls-tree提交ID后的数字是文件大小
+
+如果要对暂存区的目录树使用git ls-tree 命令,需先将暂用存区的目录树写入对象库
+(用git write-tree),然后在执行git ls-tree命令
+git write-tree
+9431f4a456545216466465464887613154646(生成的TreeId)
+git ls-tree -l 9431f4a
+[git write-tree | xarge git ls-tree -l -r -t]以递归操作显示目录树的内容
 
 ls -aF 显示文件(包括隐藏文件)
