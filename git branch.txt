@@ -9,3 +9,11 @@ git branch -d <branchname> £¬É¾³ıÃû³ÆÎªbranchnameµÄ·ÖÖ§£¬É¾³ıÊ±»á¼ì²éËùÓĞµÄÉ¾³ı·
 git branch -D <branchname>£¬Ç¿ÖÆÉ¾³ı·ÖÖ§<branchname>
 
 git branch -m <oldbranch> <newbranch>£¬ÖØÃüÃû·ÖÖ§
+
+
+Äã¿ÉÒÔÔÚÊ¹ÓÃ'git branch'ÃüÁîÊ±¼ÓÉÏ'--track'²ÎÊı, À´ÊÖ¶¯´´½¨Ò»¸ö'×·×Ù·ÖÖ§'.
+git branch --track experimental origin/experimental
+µ±ÄãÔËĞĞÏÂÃüÁîÊ±:
+$ git pull experimental
+Ëü»á×Ô¶¯´Ó¡®origin'×¥È¡(fetch)ÄÚÈİ£¬ÔÙ°ÑÔ¶³ÌµÄ'origin/experimental'·ÖÖ§ºÏ²¢½ø(merge)±¾µØµÄ'experimental'·ÖÖ§.
+µ±Òª°ÑĞŞ¸ÄÍÆËÍ(push)µ½originÊ±, Ëü»á½«Äã±¾µØµÄ'experimental'·ÖÖ§ÖĞµÄĞŞ¸ÄÍÆËÍµ½originµÄ¡®experimental'·ÖÖ§Àï,¡¡¶øÎŞĞèÖ¸¶¨Ëü(origin).

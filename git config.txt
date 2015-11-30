@@ -1,4 +1,4 @@
-git config --global user.name free.li
+﻿git config --global user.name free.li
 git config --global user.email free.li@shareworks.cn
 删除git全局配置文件中关于user.name和user.email的设置
 git config --unset --global user.name
@@ -27,3 +27,7 @@ GIT_CONFIG=test.ini git config a.b.c.d "hello,world"
 从配置文件test.ini中读取配置
 GIT_CONFIG=test.ini git config a.b.c.d
 hello,world
+
+1 git remote add -f origin login@git.sv.gnu.org:/srv/git/project.git
+2 git config branch.master.remote origin
+3 git config branch.master.merge refs/heads/master   
