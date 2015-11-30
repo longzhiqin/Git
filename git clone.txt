@@ -1,2 +1,6 @@
-git clone <url> <path> 版本库检出
+﻿git clone <url> <path> 版本库检出
 git clone -b <branch> <url> 版本库分支检出
+
+git clone --bare <repository> <directory.git>
+
+git clone --mirror <repository> <directory.git>

@@ -1,1 +1,11 @@
 git resert [--soft|--hard] HEAD^
+
+git reset --hard <commit>，其中commit是可选项，可以使用引用或者提交ID，如果省略则相当于使用了HEAD的指向作为提交ID，完成的操作包括替换引用的指向，替换暂存区，替换工作区
+
+git reset --soft <commit>，其中commit是可选项，可以使用引用或者提交ID，如果省略则相当于使用了HEAD的指向作为提交ID。完成的操作主要是更改引用的指向，不改变暂存区和工作区
+
+git reset，等同于git reset HEAD，用HEAD指向的目录树重置暂存区
+
+git reset -- filename，将文件filename的改动撤出暂存区，暂存区其他文件不变
+
+git reset HEAD --filename 等同于git reset -- filename

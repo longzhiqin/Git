@@ -1,0 +1,11 @@
+git branch，显示当前所在的分支
+
+git branch <branchname>，创建新的分支branchname
+
+git branch <branchname> <start-point>，基于提交<start-point>创建新分支，新分支的分支名为<branchname>
+
+git branch -d <branchname> ，删除名称为branchname的分支，删除时会检查所有的删除分支是否已经合并到其他分支，否则拒绝删除
+
+git branch -D <branchname>，强制删除分支<branchname>
+
+git branch -m <oldbranch> <newbranch>，重命名分支
