@@ -1,0 +1,30 @@
+git reset --hard HEAD^ 将master游标指向父提交,git的暂存区也会被父提交指向的tree重置,工作区也会被tree指向的文件重置
+
+git reset 的两种使用方式:
+	1>git reset [-q] [<commitId>] [--] <files> 不会重置HEAD,工作区,而是用指定提交下的文件替换掉暂存区中的文件
+			git reset commitId a.txt 用commitId中的a.txt替换掉index中的a.txt
+	2>git reset [--soft|--mixed|--hard|--keep] [-q] [commitId]:(默认为--mixed)
+		--soft:只重置HEAD;(当对最新提交不满意时,撤销最新提交以便重新提交git reset --soft HEAD^)
+		--mixed:重置HEAD和索引(默认的);
+		--hard:重置HEAD,索引,工作区;
+		--merge:重置HEAD,索引,工作区;
+		--keep:重置HEAD,但保存本地改变;
+	git commit --amend 相当于以下两条命令的组合
+		git reset --soft HEAD^,
+		git commit -e -F .git/COMMIT_EDITMSG(-e表示强制编辑提交,-F表示从文件中读取提交说明[.git/COMMIT_EDITMSG])
+	
+一旦重置,不可恢复(只能通过reflog挽救)
+tail -5 .git/logs/refs/heads/master(查看master分支的历史信息,找到重置前的提交ID)
+
+git提供了一个git reflog命令,对这个文件(.git/logs/refs/heads/master)进行操作.使用show子命令可以显示此文件的内容
+git reflog show master | head -5(显示master分支的前5条内容):
+90a00fe master@{0}: reset: moving to HEAD^
+afca0e5 master@{1}: commit: does master follow this new commit?
+90a00fe master@{2}: rebase finished: refs/heads/master onto 90a00fe79b56ef579bd4b8755736bb2af0abcc9e
+08378cc master@{3}: commit: 第八次提交
+05d0836 master@{4}: commit: 第七次提交
+
+[git reflog show master | head -5与tail -5 .git/logs/refs/heads/master命令查看日志文件的最大不同在于显示顺序的不同,即最新改变放在了最前面显示,而且只显示每次改变的最终的SHA1哈希值,还有个重要的区别是便于记忆的表达式:<refname>@{<n>},这个表达式的意义是引用<refname>之前第<n>次改变时的SHA1哈希值]
+
+然后可以通过下面的命令回到重置前:
+git reset --hard master@{1} 回到提交信息为does master follow this new commit?的提交,工作区,暂存区全回来了,master指向的提交ID也回来了
