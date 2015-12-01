@@ -1,7 +1,15 @@
-﻿git checkout 
-git checkout <commit-Id>     更新到历史提交
-git checkout HEAD@'{<date>}' 更新到指定日期
-git checkout master          更新至最新提交
+﻿git checkout 的用法:Git权威指南131页
+1>: git checkout [-q] [<commit>] [--] <files>...
+2>: git checkout [branch]
+3>: git checkout [-m] [[-b|--orphan] <new_branch>] [<commit>]
+
+git checkout 汇总显示工作区.暂存区.HEAD的差异
+
+
+git checkout 
+git checkout <commit-Id>     进入分离头指针模式,HEAD指向commit-ID
+git checkout HEAD@'{<date>}' 切换到指定日期
+git checkout master          切换到master分支
 git checkout <tag>           切换至里程碑
 git checkout <branch>        切换至分支
 git checkout --<path>        还原文件/强制覆盖

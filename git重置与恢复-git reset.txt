@@ -1,3 +1,5 @@
+git reset 针对的HEAD头指针
+
 git reset --hard HEAD^ 将master游标指向父提交,git的暂存区也会被父提交指向的tree重置,工作区也会被tree指向的文件重置
 
 git reset 的两种使用方式:
