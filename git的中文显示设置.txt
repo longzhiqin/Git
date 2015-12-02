@@ -21,7 +21,7 @@ set convert-meta off
 
 修改%Git%\etc\profile，在末尾添加如下一行：
 
-export LESSCHARSET=utf-8
+export LESSCHARSET=utf-8或者iso8859或者gbk
 4、在git gui 中正常显示代码中的中文： 
 
 修改%Git%\etc\gitconfig，添加如下配置项（如果代码文件是gb2312编码，就填gb2312）
