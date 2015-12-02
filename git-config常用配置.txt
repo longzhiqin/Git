@@ -1,0 +1,41 @@
+[user]
+
+	[filter "lfs"]
+	
+	
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+	[core]
+	autocrlf = false
+	editor = notepad
+	pager = less -+$LESS -FRX
+	quotepath = false
+	
+[alias]
+	
+
+[user]
+	name = free.li
+	email = free.li@shareworks.cn
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	lol = log --pretty=raw --graph
+	
+[push]
+	default = simple
+[color]
+	ui = true
+[merge]
+	summary = true
+[gui]
+	encoding = utf-8
+	warndetachedcommit = true
+[i18n]
+	commitEncoding = utf-8
+[credential]
+	helper = store
