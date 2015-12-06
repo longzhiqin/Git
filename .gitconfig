@@ -17,6 +17,15 @@
 	ui = true
 [merge]
 	summary = true
+	tool=p4merge
+[mergetool "p4merge"]
+	cmd = p4merge.exe "$BASH" "$LOCAL" "$REMOTE" "$MERGED"
+	trustExitCode = false
+	keepBackup = false
+[diff]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = p4merge.exe "$LOCAL" "$REMOTE"
 [gui]
 	encoding = utf-8
 	warndetachedcommit = true
@@ -48,3 +57,5 @@
 	commitEncoding = utf-8
 [credential]
 	helper = store
+
+
